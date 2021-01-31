@@ -11,7 +11,7 @@ import Home from "routes/Home";
 import Profile from "routes/Profile";
 import Navigation from "components/Navigation";
 
-const AppRouter = ({ isLoggendIn }) => {
+const AppRouter = ({ isLoggendIn, userObj }) => {
   return (
     <Router>
       {isLoggendIn && <Navigation />}
@@ -19,7 +19,7 @@ const AppRouter = ({ isLoggendIn }) => {
         {isLoggendIn ? (
           <>
             <Route exact path='/'>
-              <Home />
+              <Home userObj={userObj} />
             </Route>
             <Route exact path='/profile'>
               <Profile />
