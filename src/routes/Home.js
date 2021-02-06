@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 const Home = ({ userObj }) => {
   const [nweet, setNweet] = useState("");
   const [nweets, setNweets] = useState([]);
-  const [attachment, setAttachment] = useState();
+  const [attachment, setAttachment] = useState("");
   // const getNweets = async () => {
   //   const dbNweets = await dbService.collection("nweets").get();
   //   dbNweets.forEach((document) => {
@@ -19,13 +19,17 @@ const Home = ({ userObj }) => {
   // };
   useEffect(() => {
     // getNweets();
-    dbService.collection("nweets").onSnapshot((snapshot) => {
-      const nweetArray = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setNweets(nweetArray);
-    });
+    dbService
+      .collection("nweets")
+      .orderBy("createdAt", "desc")
+      .onSnapshot((snapshot) => {
+        const nweetArray = snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        console.log(nweetArray);
+        setNweets(nweetArray);
+      });
   }, []);
   const onSubmit = async (event) => {
     event.preventDefault();
@@ -69,7 +73,7 @@ const Home = ({ userObj }) => {
   };
   const onClearAttachment = () => {
     document.getElementById("imgInput").value = null;
-    setAttachment(null);
+    setAttachment("");
   };
   return (
     <div>
