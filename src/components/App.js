@@ -14,7 +14,6 @@ function App() {
           uid: user.uid,
           updateProfile: (args) => user.updateProfile(args),
         });
-      } else {
       }
       setInit(true);
     });
@@ -27,6 +26,9 @@ function App() {
       updateProfile: (args) => user.updateProfile(args),
     });
   };
+  const clearUser = () => {
+    setUserObj(null);
+  };
   return (
     <>
       {init ? (
@@ -34,11 +36,12 @@ function App() {
           isLoggendIn={Boolean(userObj)}
           userObj={userObj}
           refreshUser={refreshUser}
+          clearUser={clearUser}
         />
       ) : (
         "Loading..."
       )}
-      <footer>&copy; Nwitter {new Date().getFullYear()}</footer>
+      {/* <footer>&copy; Nwitter {new Date().getFullYear()}</footer> */}
     </>
   );
 }
