@@ -18,16 +18,16 @@ const AppRouter = ({ isLoggendIn, userObj }) => {
       <Switch>
         {isLoggendIn ? (
           <>
-            <Route exact path='/'>
+            <Route exact path="/">
               <Home userObj={userObj} />
             </Route>
-            <Route exact path='/profile'>
+            <Route exact path="/profile">
               <Profile />
             </Route>
           </>
         ) : (
           <>
-            <Route exact path='/'>
+            <Route exact path="/">
               <Auth />
             </Route>
           </>

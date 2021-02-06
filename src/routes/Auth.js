@@ -53,32 +53,32 @@ const Auth = () => {
     <div>
       <form onSubmit={onSubmit}>
         <input
-          name='email'
-          type='email'
-          placeholder='Email'
+          name="email"
+          type="email"
+          placeholder="Email"
           required
           value={email}
           onChange={onChange}
         />
         <input
-          name='password'
-          type='password'
-          placeholder='Password'
+          name="password"
+          type="password"
+          placeholder="Password"
           required
           value={password}
           onChange={onChange}
         />
-        <input type='submit' value={newAccount ? "Sign Up" : "Sign In"} />
+        <input type="submit" value={newAccount ? "Sign Up" : "Sign In"} />
         {error}
       </form>
       <div>
         <span onClick={toggleAccount}>
           {newAccount ? "Sign In" : "Sign Up"}
         </span>
-        <button name='google' onClick={socialClick}>
+        <button name="google" onClick={socialClick}>
           Continue with Google
         </button>
-        <button name='github' onClick={socialClick}>
+        <button name="github" onClick={socialClick}>
           Continue with Github
         </button>
       </div>
