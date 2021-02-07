@@ -45,24 +45,26 @@ form {
 }
 
 .formInput {
-  width: 100%;
+  width: 17rem;
   padding: 10px 20px;
   border-radius: 20px;
   border: 1px solid black;
   text-align: center;
   background-color: white;
   color: black;
+  margin: 0 auto;
 }
 
 .formBtn {
   cursor: pointer;
-  width: 100%;
+  width: 17rem;
   padding: 7px 20px;
   text-align: center;
   color: white;
   border-radius: 20px;
   background-color: #04aaff;
   cursor: pointer;
+  margin: 0 auto;
 }
 
 .cancelBtn {
@@ -81,7 +83,7 @@ form {
 }
 
 .logOut {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 /* Nwitter Factory */
@@ -240,7 +242,7 @@ form {
 /* AuthForm */
 
 .authInput {
-  max-width: 320px;
+  max-width: 300px;
   width: 100%;
   padding: 10px;
   border-radius: 30px;
