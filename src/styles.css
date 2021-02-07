@@ -45,7 +45,8 @@ form {
 }
 
 .formInput {
-  width: 17rem;
+  width: 100%;
+  max-width: 300px;
   padding: 10px 20px;
   border-radius: 20px;
   border: 1px solid black;
@@ -57,7 +58,8 @@ form {
 
 .formBtn {
   cursor: pointer;
-  width: 17rem;
+  width: 100%;
+  max-width: 300px;
   padding: 7px 20px;
   text-align: center;
   color: white;
